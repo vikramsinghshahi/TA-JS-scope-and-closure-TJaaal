@@ -67,3 +67,4 @@ let counter = function () {
   return increment();
 };
 ```
+// error counter is not defined
