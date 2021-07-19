@@ -74,32 +74,23 @@ function add(a, b) {
 }
 
 let five = add(2, 3); // valid
-five = add; // invalid
-five = five(10, 11); // invalid
+five = add; // valid
+five = five(10, 11); // valid
 five = function () {
   return 'Hello';
-}; // invalid
+}; // valid
 ```
 
 6. What is the difference between function definition and function call? Explain with an example.
-function definition is the series of step perform by javascript when it call.
-example - function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+function sum(){}// function defination is defining a function with function key word
 
-percentage function is starting with the key word function thats why its called function definition
+sum()// function call is calling a function with paranteses
 
-
-function call is the calling of function so that it can perform the series of steps 
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
-
-percentage(50 , 100)
 
 
 7. What is the similarities between function definition and function call? 
-in both cases the the function will start with the key word called function.
+function defination is an expression
+function call is also an expression
 
 
 8. Is the code below valid or invalid. Explain with reason.
