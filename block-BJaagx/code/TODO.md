@@ -31,7 +31,7 @@ let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
 
 ```js
 function operation(n, opFn) {
-  
+  return opFn(n);
 }
 // TEST
 console.log(
@@ -39,6 +39,7 @@ console.log(
     return n / 10;
   })
 );
+
 // Output: 2.1
 console.log(
   operation(10, function (n) {
@@ -52,7 +53,7 @@ console.log(
 
 ```js
 function operation(str, opFn) {
-  // your code goes her
+  return opFn(str); 
 }
 // TEST
 console.log(
