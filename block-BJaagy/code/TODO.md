@@ -11,6 +11,14 @@ Have `map` return a new array filled with values that are the result of the 'cal
 ```js
 // Your code goes here
 
+function map(n, multiplyByTwo(n)){
+  final = [];
+  for(elm of arr){
+    final.push()
+  }
+  
+}
+
 // Test Your Code
 function multiplyByTwo(n) {
   return n * 2;
