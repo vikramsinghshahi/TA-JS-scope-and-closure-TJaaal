@@ -21,7 +21,7 @@ function getCounter() {
 
 let counter = getCounter()
 
-counter.value();  // output
+counter.value();  // 1
 counter.increment(); // output
 counter.increment(); // output
 counter.value(); // output
