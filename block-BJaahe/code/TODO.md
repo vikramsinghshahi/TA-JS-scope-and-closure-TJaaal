@@ -6,11 +6,11 @@
 // Your code goes here
 
 function outer(str){
-  let final = function sayHello(){
-    alert str
+  let sayHello = function(){
+    alert(str);
   }
 
-  return final;
+  sayHello();
 }
 
 outer("vikram");
@@ -21,12 +21,21 @@ outer("vikram");
 
 ```js
 // Your code goes here
+
+function delay(cb , ms){
+  return function(){
+    setTimeout(cb , ms);
+  } 
+}
 ```
 
 3. Write a function with a closure. The first function should only take one argument, someone's last name, and return the inner function. The returned `inner` function should take one more argument, someone's first name. When inner function when called it should console.log both the first name and the last name with a space.
 
 ```js
-function lastName() {
+function lastName(ln) {
+ return function(fn){
+      console.log(`${fn} ${ln}`)
+ }  
   //  Your code goes here
 }
 
@@ -45,7 +54,17 @@ lastNameLee('Lynne'); //logs 'Lynne Lee'
 
 ```js
 function storyWriter() {
-  // Your code goes here
+  let story =""
+    return {
+      addWords: function(word){
+        story += word;
+        return story;
+      },
+      erase: function(){
+        story = "";
+        return story;
+      },
+    }
 }
 
 // Test
@@ -65,8 +84,11 @@ storyOfMyLife.erase(); // ''
 When `forEach` function is called it returns another function. When the returned function is called it returns the element from the array at specific index. Every time you call the returned function the value of index should increment.
 
 ```js
-function forEach() {
-  // Your code goes here
+function forEach(arr) {
+  let index= 0;
+  return function(){
+    return arr[index++];
+  }
 }
 
 let next = [1, 2, 3, 4, 5];
@@ -83,11 +105,15 @@ The returned function accepts a string `prefix` and returns `prefix` and `title`
 
 ```js
 function addDesignation(title) {
-  // your code goes here
+  return function(prefix){
+    return `${prefix} ${title}`
+
+  }
 }
 
 let sales = addDesignation('Salesman');
-sales('Main'); // Main Salesman
+
+ // Main Salesman
 
 let manager = addDesignation('Manager');
 manager('Regional'); // Regional Manager
@@ -101,8 +127,19 @@ manager('Head'); // Head Manager
 - `current` will return the current salary returns the updated salary
 
 ```js
-function changeSalary() {
-  // Your code goes here
+function changeSalary(num) {
+   return {
+     raise : function(){
+       return num + 500
+
+     }, lower:function(){
+       return num- 500
+
+     }, current: function(){
+       return num
+
+     }
+   }
 }
 
 let sam = changeSalary(2000);
@@ -119,6 +156,20 @@ arya.lower(); // 3500
 - `setLastName`: accepts a parameter last name using which updates the firstName and return the updated full name
 
 ```js
+
+function nameFactory(fn, ln){
+  return {
+    getFullName: function(){
+      return `${fn} ${ln}`
+
+    }, setFirstName: function(fn){
+      return `${fn} ${ln}`
+
+    }, setLastName: function(ln){
+          return `${fn} ${ln}`
+    }
+  }
+}
 // Your code goes here
 
 let arya = nameFactory('Arya', 'Stark');
@@ -132,8 +183,12 @@ arya.setLastName('Lannister'); // "Jon Lannister"
 The returned function accepts a string (children) and returns the children with the tag you passed.
 
 ```js
-function createTag() {
-  // your code goes here
+function createTag(tag) {
+  return function(child){
+    let elm = document.createElement(tag);
+    elm.innerText = child;
+    return elm;
+  }
 }
 
 let bold = createTag('b');
