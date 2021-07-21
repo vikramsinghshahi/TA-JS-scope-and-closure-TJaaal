@@ -10,8 +10,9 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
+function loop(initial, tf, uf, bf) {
   // Your code goes here
+  
 }
 
 loop(
