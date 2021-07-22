@@ -6,8 +6,7 @@
 // Your code goes here
 function multiplyBy(num){
  return (num2)=>{
-    num2= num*2;
-    return (num2*2)
+    return (num2*num)
      }
 }
 
@@ -18,6 +17,11 @@ const final = double(15); // final should be 30
 2. Write a function called `fullName` that takes a string `firstName` as an argument and returns a function. Returned function takes another string `lastName` as an argument and returns full name.
 
 ```js
+function fullName(str){
+  return function(str2){
+    return `${str} ${str2}`
+  }
+}
 // Your code goes here
 
 const name = fullName('Will');
@@ -29,7 +33,15 @@ const final = name('Smith'); // final should be "Will Smith"
 ```js
 function isInBetween(a, b) {
   // your code goes here
+   return function(c){
+     if(a > b){
+       return c < a && c > b;
+     } else if(a < b){
+       return c >a && c < b; 
+     }
+   }
 }
+
 
 const isChild = isInBetween(10, 100);
 isChild(21); // true
@@ -37,11 +49,14 @@ isChild(45); // true
 isChild(103); // false
 ```
 
+
 4. Write a function call `letsWishThem` that take one parameter `string` called `greeting` and returns a function that takes another argument called `message`.
 
 ```js
 function letsWishThem(greeting) {
-  // your code goes here
+  return function(message){
+    return `${greeting} ${message}`
+  }
 }
 
 const callWithHey = letsWishThem('Hey');
@@ -53,7 +68,10 @@ callWithHello('How Are You?'); // Hello How Are You?
 5. Write a function called `addGame` which takes a string (name of the game) and the current score. It returns a function calling that will increment the score by one and print something like `Score of Basketball is 1`.
 
 ```js
-function addGame(gameName) {
+function addGame(gameName , score) {
+  return function(){
+    return `Your score of ${gameName} is ${score++}`
+  }
   // your code goes here
 }
 
@@ -70,7 +88,15 @@ cricket(); // Your score of Cricket is 2
 
 ```js
 function getCard(suit) {
-  // your code goes here
+  return function(){
+    let values = [2,3,4,5,6,7,8,9,10,"J", "Q", "K", "A"]
+
+    function getRandomNumber(){
+      return Math.floor(Math.random() * values.length);
+    }
+
+    return `Card is: ${values[getRandomNumber()]} ${suit}`
+  }
 }
 
 // Output
