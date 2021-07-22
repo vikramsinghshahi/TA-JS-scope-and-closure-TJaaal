@@ -62,10 +62,23 @@ var nextMessage = sayHello('Test');
 ```
 
 <!-- Answer -->
-
 ```js
-// Your code goes here
+
+//Declaration phase
+ 
+ username = undefined;
+ number = ;
+
+sayHello = function;
+
+message =;
+nextMessage= undefined;
+
+// Execution Phase
+
+console.log(username , numbers)//error- numbers not defined
 ```
+
 
 3.
 
@@ -85,7 +98,19 @@ var nextMessage = sayHello('Test');
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//declaration phase
+
+username=;
+number = ;
+
+sayHello =;
+message =;
+nextMessage =undefined;
+
+//exectuion phase
+
+console.log(username, numbers)// error- username is not defined
+
 ```
 
 4.
@@ -107,7 +132,21 @@ var nextMessage = sayHello('Test');
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//declaration phase
+
+username = ;
+
+number = ;
+message =;
+sayHello =;
+
+nextMessage = undefined;
+
+//execution phase
+
+username = "Arya";
+
+console.log(username, numbers)//error- numbers is not defined
 ```
 
 5.
@@ -122,7 +161,17 @@ let age = 21;
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//declaration phase
+
+name = undefined;
+
+age =;
+
+//execution phase
+
+console.log(name)//undefined;
+
+console.log(age)//Error- age not defined
 ```
 
 6.
@@ -141,7 +190,25 @@ sayHi();
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//declaration phase
+
+sayHi = function;
+
+//execution phase
+
+sayHi()
+
+// sayHi function declaration
+
+name = undefined;
+
+age = ;
+
+// sayHi function execution
+
+console.log(name)// undefined
+console.log(age)//Cannot access 'age' before initialization
+
 ```
 
 7.
@@ -159,7 +226,25 @@ function sayHi(name) {
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//declaration phase
+
+sayHi = function;
+
+//execution phase
+
+sayHi()
+
+// sayHi function declaration
+
+name = undefined;
+
+age = ;
+
+// sayHi function execution
+
+console.log(name)// undefined
+console.log(age)//Cannot access 'age' before initialization
+
 ```
 
 8.
@@ -258,5 +343,43 @@ function add(a, b) {
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//decleration phase
+
+test = function;
+
+sum = ;
+
+add = function;
+
+//exectution phase
+
+sum = test(100);//121
+
+//test function
+
+//declaration phase
+a = undefined;
+
+num1 = ;
+
+//exection phase
+
+a = 100;
+num1 = 21;
+
+//decleration phase
+
+a = undefined;
+
+b = undefined;
+
+//executio phase
+
+a= 100;
+
+b = 21;
+
+return a+b//121
+
+
 ```
