@@ -262,7 +262,16 @@ let sayHi = function sayHi(name) {
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//declaration phase
+
+sayHi = ;
+
+//execution phase
+
+sayHi() // sayHi is not defined
+
+
+
 ```
 
 9.
@@ -277,7 +286,18 @@ let num2 = 30;
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//decleartion phase
+
+num1 = ;
+
+sum = undefined;
+
+num2 =;
+//execution phase
+
+num1 = 21;
+
+console.log(sum)// Error - num2 is not defined
 ```
 
 10.
@@ -301,7 +321,25 @@ let sum = add(num1, num2, 4, 5, 6);
 <!-- Answer -->
 
 ```js
-// Your code goes here
+//declaration phase
+
+num1= undefined;
+
+sum2= ;
+
+add= ;
+
+addAgain = function;
+
+num2 =  ;
+
+sum = ;
+
+//execution phase
+
+num1 = 21;
+
+sum2 = addAgain(num1 , num2 , 4, 5 , 6 );// Error- addAgain is not defined;
 ```
 
 11.
